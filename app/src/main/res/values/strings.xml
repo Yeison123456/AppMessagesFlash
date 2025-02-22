@@ -1,0 +1,12 @@
+<resources>
+    <string name="appName">MessagesFlash</string>
+    <string name="nameCreater">Yeison David Rodriguez Rodriguez</string>
+    <string name="textRegisterHome">Regístrate</string>
+    <string name="textBeginHome">Comienza</string>
+    <string name="textSignInLogin">Ingresar</string>
+    <string name="textRecoverPasswordLogin">Recuperar Tu Contraseña</string>
+    <string name="textWelcomeHome">Inicia una nueva aventura con MessagesFlash y descubre una nueva forma de ver el mundo</string>
+    <string name="textWelcomeLogin">La aventura está por iniciar, por favor inicia sesión</string>
+    <string name="textGoogleLogin">Ingresa con Google</string>
+    <string name="noCountLogin">No tienes cuenta?</string>
+</resources>

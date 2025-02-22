@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+
+    <Button
+        android:id="@+id/buttonInGoogleLogin"
+        android:layout_width="347dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="116dp"
+        android:backgroundTint="@color/whiteInputs"
+        android:fontFamily="serif"
+        android:paddingLeft="10dp"
+        android:paddingTop="2dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="2dp"
+        android:text="@string/textGoogleLogin"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        app:icon="@drawable/icon_google"
+        app:iconPadding="1dp"
+        app:iconSize="40dp"
+        app:iconTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_editor_absoluteX="105dp"
+        app:layout_editor_absoluteY="348dp"
+        app:strokeColor="@color/green"
+        app:strokeWidth="2dp" />
+
+    <TextView
+        android:id="@+id/textRegisterLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="serif"
+        android:text="@string/textRegisterHome"
+        android:textColor="@color/green"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textNoCountLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginBottom="76dp"
+        android:fontFamily="serif"
+        android:text="@string/noCountLogin"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textNameAppLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="serif"
+        android:text="@string/appName"
+        android:textAlignment="center"
+        android:textColor="@color/green"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/logoAppLogin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etUsernameLogin"
+        style="@style/EditTextRounded"
+        android:layout_width="279dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="31dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/etPasswordLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_editor_absoluteX="105dp"
+        app:layout_editor_absoluteY="92dp" />
+
+    <EditText
+        android:id="@+id/etPasswordLogin"
+        style="@style/EditTextRounded"
+        android:layout_width="279dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="428dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="text"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_editor_absoluteX="105dp"
+        app:layout_editor_absoluteY="92dp" />
+
+    <ImageView
+        android:id="@+id/iconCountLogin"
+        android:layout_width="88dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/etUsernameLogin"
+        app:layout_constraintHorizontal_bias="0.592"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.405"
+        app:srcCompat="@drawable/icon_user" />
+
+    <ImageView
+        android:id="@+id/iconKeyLogin"
+        android:layout_width="78dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/etPasswordLogin"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iconCountLogin"
+        app:srcCompat="@drawable/icon_key" />
+
+    <TextView
+        android:id="@+id/textWelcomeLogin"
+        android:layout_width="284dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="41dp"
+        android:fontFamily="serif"
+        android:text="@string/textWelcomeLogin"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/etUsernameLogin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/logoAppLogin"
+        android:layout_width="122dp"
+        android:layout_height="102dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="92dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <Button
+        android:id="@+id/buttonSingInLogin"
+        android:layout_width="257dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="47dp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="serif"
+        android:text="@string/textSignInLogin"
+        android:textSize="34sp"
+        app:strokeColor="@color/orange"
+        app:strokeWidth="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPasswordLogin" />
+
+    <TextView
+        android:id="@+id/textRecoverPasswordLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif"
+        android:text="@string/textRecoverPasswordLogin"
+        android:textColor="@color/orange"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonSingInLogin" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
