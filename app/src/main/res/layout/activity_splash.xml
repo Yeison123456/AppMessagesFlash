@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="60dp"
         android:fontFamily="serif"
         android:text="@string/nameCreater"
         android:textColor="@color/orange"

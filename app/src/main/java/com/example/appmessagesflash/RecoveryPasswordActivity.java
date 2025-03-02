@@ -2,40 +2,57 @@ package com.example.appmessagesflash;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class HomeActivity extends AppCompatActivity {
+public class RecoveryPasswordActivity extends AppCompatActivity {
 
-    private TextView textRegister;
-    private Button buttonBegin;
+    private EditText etEmail;
+    private Button buttonRecoveryPassword;
+    private TextView textGoBack;
+    private SharedPreferences sharedPreferences;
+
 
     @SuppressLint("MissingSuperCall")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_recovery_password);
 
-        buttonBegin= findViewById(R.id.buttonBeginHome);
-        textRegister= findViewById(R.id.textRegisterHome);
+        etEmail= findViewById(R.id.etEmailRecoveryPassword);
+        buttonRecoveryPassword= findViewById(R.id.buttonRecoveryPassword);
+        textGoBack= findViewById(R.id.textGoBackRecoveryPassword);
 
-        buttonBegin.setOnClickListener(new View.OnClickListener() {
+        sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
+
+
+        buttonRecoveryPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redirection(LoginActivity.class);
+                if (validateFields()){
+                    if (etEmail.getText().toString().trim().equals(sharedPreferences.getString("email", ""))){
+                        Toast.makeText(RecoveryPasswordActivity.this,"Se envio el correo exitosamente", Toast.LENGTH_SHORT).show();
+                        redirection(LoginActivity.class);
+                    } else {
+                        Toast.makeText(RecoveryPasswordActivity.this,"El correo digitado no esta registrado", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
-        textRegister.setOnClickListener(new View.OnClickListener() {
+        textGoBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                redirection(RegisterActivity.class);
+                redirection(LoginActivity.class);
             }
         });
 
@@ -77,6 +94,14 @@ public class HomeActivity extends AppCompatActivity {
         Log.d("Lifecycle", "onDestroy llamado");
     }
 
+    private boolean validateFields(){
+        if (etEmail.getText().toString().trim().isEmpty()){
+            Toast.makeText(this,"El campo Email es requerido", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+        return true;
+    }
 
     //Functions Apart from the life cycles of the activity
     private View.OnClickListener redirection(Class<?> destinationActivity){
