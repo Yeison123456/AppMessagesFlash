@@ -126,7 +126,12 @@ class RegisterActivity : AppCompatActivity() {
         val control= sharedPreferences.edit()
         control.putString("name",etName.text.toString().trim())
         control.putString("lastName",etLastName.text.toString().trim())
-        control.putLong("phone",etPhone.text.toString().trim().toLong())
+        try {
+            control.putLong("phone", etPhone.text.toString().trim().toLong())
+        } catch (e: NumberFormatException) {
+            Toast.makeText(this, "El número de teléfono no es válido", Toast.LENGTH_SHORT).show()
+            return
+        }
         control.putString("email",etEmail.text.toString().trim())
         control.putString("password",etPassword.text.toString().trim())
 
