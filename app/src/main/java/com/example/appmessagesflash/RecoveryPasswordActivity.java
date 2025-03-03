@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.regex.Pattern;
+
 public class RecoveryPasswordActivity extends AppCompatActivity {
 
     private EditText etEmail;
@@ -96,12 +98,17 @@ public class RecoveryPasswordActivity extends AppCompatActivity {
 
     private boolean validateFields(){
         if (etEmail.getText().toString().trim().isEmpty()){
-            Toast.makeText(this,"El campo Email es requerido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"El campo correo electrónico es requerido", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (!Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$").matcher(etEmail.getText().toString().trim()).matches()) {
+            Toast.makeText(this, "El correo electrónico no es válido", Toast.LENGTH_SHORT).show();
             return false;
         }
 
         return true;
     }
+
 
     //Functions Apart from the life cycles of the activity
     private View.OnClickListener redirection(Class<?> destinationActivity){

@@ -110,6 +110,11 @@ class RegisterActivity : AppCompatActivity() {
             return false
         }
 
+        if (!etEmail.text.toString().trim().matches(Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"))) {
+            Toast.makeText(this, "El correo electrónico no es válido", Toast.LENGTH_SHORT).show()
+            return false
+        }
+
         if (etPassword.text.toString().trim() != etConfirmPassword.text.toString().trim()) {
             Toast.makeText(this, "La confirmación de la contraseña es incorrecta", Toast.LENGTH_SHORT).show()
             return false
@@ -126,7 +131,12 @@ class RegisterActivity : AppCompatActivity() {
         val control= sharedPreferences.edit()
         control.putString("name",etName.text.toString().trim())
         control.putString("lastName",etLastName.text.toString().trim())
-        control.putLong("phone",etPhone.text.toString().trim().toLong())
+        try {
+            control.putLong("phone", etPhone.text.toString().trim().toLong())
+        } catch (e: NumberFormatException) {
+            Toast.makeText(this, "El número de teléfono no es válido", Toast.LENGTH_SHORT).show()
+            return
+        }
         control.putString("email",etEmail.text.toString().trim())
         control.putString("password",etPassword.text.toString().trim())
 

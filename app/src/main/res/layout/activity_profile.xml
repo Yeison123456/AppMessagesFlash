@@ -48,6 +48,7 @@
                         app:strokeWidth="3dp"
                         android:fontFamily="serif"
                         android:text="Cambiar foto"
+                        android:textColor="@color/white"
                     />
 
             </LinearLayout>
