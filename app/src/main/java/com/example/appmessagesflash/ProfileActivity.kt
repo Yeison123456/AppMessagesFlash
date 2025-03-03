@@ -75,6 +75,11 @@ class ProfileActivity : AppCompatActivity() {
                 return false
             }
 
+            if (!etEmail.text.toString().trim().matches(Regex("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"))) {
+                Toast.makeText(this, "El correo electrónico no es válido", Toast.LENGTH_SHORT).show()
+                return false
+            }
+
 
             return true
         }
